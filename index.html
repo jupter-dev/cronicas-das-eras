@@ -37,11 +37,17 @@ header p{margin:.4rem auto 0;max-width:32rem;color:var(--texto2)}
 .req li{border:1px solid var(--linha);background:var(--noite2);border-radius:999px;padding:.3rem .85rem;font-size:.9rem;color:var(--texto2)}
 .req b{color:var(--texto)}
 
-.baixar-grupo{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0 .3rem}
-.baixar{display:inline-block;background:var(--brasa);color:var(--tinta);font:700 1.1rem var(--corpo);
+.baixar{display:inline-block;margin:1.4rem 0 .3rem;background:var(--brasa);color:var(--tinta);font:700 1.1rem var(--corpo);
   text-decoration:none;border-radius:12px;padding:.85rem 1.4rem;box-shadow:0 6px 18px rgba(242,162,63,.25)}
-.baixar.baixar-alt{background:transparent;color:var(--brasa2);border:1px solid var(--linha);box-shadow:none;font-weight:500}
-.baixar.baixar-alt:hover{background:var(--noite2);border-color:var(--brasa)}
+/* Caminho rápido: dois botões do launcher centralizados acima dos 4 caminhos manuais */
+.launcher-cta{margin:2.4rem auto .4rem;text-align:center}
+.launcher-cta .titulo{font-family:var(--pixel);font-weight:700;font-size:1.25rem;color:var(--texto);margin:0 0 .15rem;letter-spacing:.01em}
+.launcher-cta .legenda{color:var(--texto2);margin:0 auto 1rem;max-width:34rem;font-size:.98rem}
+.launcher-cta .duo{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
+.launcher-cta .duo .baixar{margin:0;min-width:11rem;text-align:center}
+.separador-ou{display:flex;align-items:center;gap:1rem;margin:2.2rem auto 1.4rem;max-width:34rem;color:var(--texto2);font-family:var(--pixel);font-size:1rem;letter-spacing:.3em;text-transform:lowercase}
+.separador-ou::before,.separador-ou::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--brasa) 0 8px,transparent 8px 14px);opacity:.65;border-radius:2px}
+.separador-ou span{padding:0 .3rem}
 .baixar:hover{background:var(--brasa2)}
 .baixar-nota{font-size:.9rem;color:var(--texto2);margin:.3rem auto 0}
 /* escolha */
@@ -126,13 +132,20 @@ footer{text-align:center;color:var(--texto2);font-size:.9rem;margin-top:2.5rem}
     <li><b>8 GB livres</b> no disco</li>
     <li>O arquivo <b>CronicasDasEras-*.zip</b></li>
   </ul>
-  <div class="baixar-grupo">
+  <a class="baixar" href="https://drive.google.com/drive/folders/1YlqCNW3RIfl1CNpnUKcer4suFCqCPoTj" target="_blank" rel="noopener">Baixar o pack (Google Drive)</a>
+  <p class="baixar-nota">Abra a pasta, clique no arquivo <b>CronicasDasEras-*.zip</b> e depois em Fazer download. Não precisa abrir o zip.</p>
+</header>
+
+<section class="launcher-cta" aria-label="Caminho rápido pelo nosso launcher">
+  <p class="titulo">Prefere o caminho mais rápido?</p>
+  <p class="legenda">Nosso launcher baixa, instala e mantém tudo sozinho. É só executar.</p>
+  <div class="duo">
     <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-windows.exe">Baixar para Windows</a>
     <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-linux">Baixar para Linux</a>
-    <a class="baixar baixar-alt" href="https://drive.google.com/drive/folders/1YlqCNW3RIfl1CNpnUKcer4suFCqCPoTj" target="_blank" rel="noopener">Baixar o pack (Google Drive)</a>
   </div>
-  <p class="baixar-nota">Nos dois primeiros você só executa e tudo é instalado pra você. O terceiro é o <b>CronicasDasEras-*.zip</b> para instalar manualmente no seu Forge, CurseForge ou outro launcher — siga o guia abaixo.</p>
-</header>
+</section>
+
+<div class="separador-ou" role="separator" aria-orientation="horizontal"><span>ou</span></div>
 
 <section aria-labelledby="t-escolha">
   <h2 id="t-escolha">Capítulo I: escolha seu portal</h2>
