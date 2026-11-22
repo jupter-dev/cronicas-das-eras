@@ -40,8 +40,8 @@ header p{margin:.4rem auto 0;max-width:32rem;color:var(--texto2)}
 .baixar-grupo{display:flex;flex-wrap:wrap;gap:.6rem;margin:1.4rem 0 .3rem}
 .baixar{display:inline-block;background:var(--brasa);color:var(--tinta);font:700 1.1rem var(--corpo);
   text-decoration:none;border-radius:12px;padding:.85rem 1.4rem;box-shadow:0 6px 18px rgba(242,162,63,.25)}
-.baixar-nota.alt{margin-top:1rem;color:var(--texto2);font-size:.9rem}
-.baixar-link{color:var(--brasa2);text-decoration:underline;font-weight:700}
+.baixar.baixar-alt{background:transparent;color:var(--brasa2);border:1px solid var(--linha);box-shadow:none;font-weight:500}
+.baixar.baixar-alt:hover{background:var(--noite2);border-color:var(--brasa)}
 .baixar:hover{background:var(--brasa2)}
 .baixar-nota{font-size:.9rem;color:var(--texto2);margin:.3rem auto 0}
 /* escolha */
@@ -127,11 +127,11 @@ footer{text-align:center;color:var(--texto2);font-size:.9rem;margin-top:2.5rem}
     <li>O arquivo <b>CronicasDasEras-*.zip</b></li>
   </ul>
   <div class="baixar-grupo">
-    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-windows.exe">Baixar launcher — Windows</a>
-    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-linux">Baixar launcher — Linux</a>
+    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-windows.exe">Baixar para Windows</a>
+    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-linux">Baixar para Linux</a>
+    <a class="baixar baixar-alt" href="https://drive.google.com/drive/folders/1YlqCNW3RIfl1CNpnUKcer4suFCqCPoTj" target="_blank" rel="noopener">Baixar o pack (Google Drive)</a>
   </div>
-  <p class="baixar-nota">Baixe o launcher do seu sistema. Ao abrir, o instalador cuida do Minecraft, do NeoForge e do modpack — sem conta Microsoft, sem CurseForge.</p>
-  <p class="baixar-nota alt">Prefere instalar no seu próprio Forge, CurseForge ou outro launcher? <a class="baixar-link" href="https://drive.google.com/drive/folders/1YlqCNW3RIfl1CNpnUKcer4suFCqCPoTj" target="_blank" rel="noopener">Baixar o pack (Google Drive)</a> e siga o guia abaixo.</p>
+  <p class="baixar-nota">Nos dois primeiros você só executa e tudo é instalado pra você. O terceiro é o <b>CronicasDasEras-*.zip</b> para instalar manualmente no seu Forge, CurseForge ou outro launcher — siga o guia abaixo.</p>
 </header>
 
 <section aria-labelledby="t-escolha">
