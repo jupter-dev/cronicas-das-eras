@@ -45,11 +45,10 @@ header p{margin:.4rem auto 0;max-width:32rem;color:var(--texto2)}
 .launcher-cta .legenda{color:var(--texto2);margin:0 auto 1rem;max-width:34rem;font-size:.98rem}
 .launcher-cta .duo{display:flex;flex-wrap:wrap;gap:.75rem;justify-content:center}
 .launcher-cta .duo .baixar{margin:0;min-width:11rem;text-align:center}
-.separador-ou{display:flex;align-items:center;gap:1rem;margin:2.2rem auto 1.4rem;max-width:34rem;color:var(--texto2);font-family:var(--pixel);font-size:1rem;letter-spacing:.3em;text-transform:lowercase}
-.separador-ou::before,.separador-ou::after{content:"";flex:1;height:2px;background:repeating-linear-gradient(90deg,var(--brasa) 0 8px,transparent 8px 14px);opacity:.65;border-radius:2px}
-.separador-ou span{padding:0 .3rem}
+.ornamento{display:flex;align-items:center;gap:1.2rem;margin:2.6rem auto 1.6rem;max-width:34rem}
+.ornamento::before,.ornamento::after{content:"";flex:1;height:5px;border-top:1px solid var(--brasa);border-bottom:1px solid var(--brasa);opacity:.65}
+.ornamento span{font-family:var(--pixel);font-size:1.15rem;color:var(--brasa);text-shadow:0 0 12px rgba(242,162,63,.35);line-height:1}
 .baixar:hover{background:var(--brasa2)}
-.baixar-nota{font-size:.9rem;color:var(--texto2);margin:.3rem auto 0}
 /* escolha */
 h2{font-size:1.6rem;margin:2.4rem 0 .3rem}
 .sub{color:var(--texto2);margin:0 0 1rem}
@@ -132,20 +131,7 @@ footer{text-align:center;color:var(--texto2);font-size:.9rem;margin-top:2.5rem}
     <li><b>8 GB livres</b> no disco</li>
     <li>O arquivo <b>CronicasDasEras-*.zip</b></li>
   </ul>
-  <a class="baixar" href="https://drive.google.com/drive/folders/1YlqCNW3RIfl1CNpnUKcer4suFCqCPoTj" target="_blank" rel="noopener">Baixar o pack (Google Drive)</a>
-  <p class="baixar-nota">Abra a pasta, clique no arquivo <b>CronicasDasEras-*.zip</b> e depois em Fazer download. Não precisa abrir o zip.</p>
 </header>
-
-<section class="launcher-cta" aria-label="Caminho rápido pelo nosso launcher">
-  <p class="titulo">Prefere o caminho mais rápido?</p>
-  <p class="legenda">Nosso launcher baixa, instala e mantém tudo sozinho. É só executar.</p>
-  <div class="duo">
-    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-windows.exe">Baixar para Windows</a>
-    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-linux">Baixar para Linux</a>
-  </div>
-</section>
-
-<div class="separador-ou" role="separator" aria-orientation="horizontal"><span>ou</span></div>
 
 <section aria-labelledby="t-escolha">
   <h2 id="t-escolha">Capítulo I: escolha seu portal</h2>
@@ -177,6 +163,17 @@ footer{text-align:center;color:var(--texto2);font-size:.9rem;margin-top:2.5rem}
   <p class="voz-p">Que as eras te recebam bem. Nos vemos ao redor da fogueira.</p>
   <button class="lista-bt" id="refazer">Voltar aos passos</button>
 </article>
+
+<div class="ornamento" role="separator" aria-orientation="horizontal" aria-hidden="true"><span>&#9670;</span></div>
+
+<section class="launcher-cta" aria-label="Caminho pelo nosso launcher automático">
+  <p class="titulo">Ou use o nosso launcher automático</p>
+  <p class="legenda">Nosso launcher baixa, instala e mantém tudo sozinho. É só executar.</p>
+  <div class="duo">
+    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-windows.exe">Baixar para Windows</a>
+    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-linux">Baixar para Linux</a>
+  </div>
+</section>
 
 <section aria-labelledby="t-ajuda">
   <h2 id="t-ajuda">Quando a magia falha</h2>
@@ -219,6 +216,12 @@ function desenhar(){
   }
   if(c.aviso&&(lista||i===n-1))p+='<div class="aviso">'+fmt(c.aviso)+'</div>';
   $('pagina').innerHTML=p;
+  var codes=$('pagina').querySelectorAll('code');
+  for(var z=0;z<codes.length;z++){if(/^CronicasDasEras-/.test(codes[z].textContent)){
+    var cz=codes[z],az=document.createElement('a');
+    az.href='https://drive.google.com/drive/folders/1YlqCNW3RIfl1CNpnUKcer4suFCqCPoTj';
+    az.target='_blank';az.rel='noopener';
+    cz.parentNode.insertBefore(az,cz);az.appendChild(cz);break;}}
   $('acoes').hidden=lista;
   $('voltar').disabled=i===0;
   $('avancar').textContent=i===n-1?'Feito, abrir o portal':'Feito, próximo passo';
