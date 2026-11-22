@@ -135,7 +135,20 @@ footer{text-align:center;color:var(--texto2);font-size:.9rem;margin-top:2.5rem}
 
 <section aria-labelledby="t-escolha">
   <h2 id="t-escolha">Capítulo I: escolha seu portal</h2>
-  <p class="sub">Todo viajante entra no mundo por um portal, o programa que abre o Minecraft. Qual destes você tem?</p>
+  <p class="sub">Todo viajante entra no mundo por um portal, o programa que abre o Minecraft.</p>
+
+  <div class="launcher-cta" role="group" aria-label="Caminho rápido pelo nosso launcher">
+    <p class="titulo">Com o nosso launcher</p>
+    <p class="legenda">Baixa, instala e mantém tudo sozinho — sem CurseForge, sem Prism, sem passos à mão.</p>
+    <div class="duo">
+      <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-windows.exe">Baixar para Windows</a>
+      <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-linux">Baixar para Linux</a>
+    </div>
+  </div>
+
+  <div class="ornamento" role="separator" aria-orientation="horizontal" aria-hidden="true"><span>&#9670;</span></div>
+
+  <p class="sub sub-alt">Ou escolha o launcher que você já usa:</p>
   <div class="escolhas" role="group" aria-label="Escolha seu launcher">
     <button class="escolha" data-caminho="A"><span class="ico" aria-hidden="true">🔥</span><div><strong>CurseForge</strong><span>Já tenho o CurseForge, ou ainda não tenho nenhum launcher (o guia ensina a baixar).</span><em class="selo">recomendado</em></div></button>
     <button class="escolha" data-caminho="B"><span class="ico" aria-hidden="true">💠</span><div><strong>Prism Launcher</strong><span>Já uso o Prism para jogar.</span></div></button>
@@ -163,17 +176,6 @@ footer{text-align:center;color:var(--texto2);font-size:.9rem;margin-top:2.5rem}
   <p class="voz-p">Que as eras te recebam bem. Nos vemos ao redor da fogueira.</p>
   <button class="lista-bt" id="refazer">Voltar aos passos</button>
 </article>
-
-<div class="ornamento" role="separator" aria-orientation="horizontal" aria-hidden="true"><span>&#9670;</span></div>
-
-<section class="launcher-cta" aria-label="Caminho pelo nosso launcher automático">
-  <p class="titulo">Ou use o nosso launcher automático</p>
-  <p class="legenda">Nosso launcher baixa, instala e mantém tudo sozinho. É só executar.</p>
-  <div class="duo">
-    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-windows.exe">Baixar para Windows</a>
-    <a class="baixar" href="https://github.com/jupter-dev/cronicas-das-eras/releases/download/v1.0.0/CronicasDasEras-1.0.0-linux">Baixar para Linux</a>
-  </div>
-</section>
 
 <section aria-labelledby="t-ajuda">
   <h2 id="t-ajuda">Quando a magia falha</h2>
@@ -254,10 +256,7 @@ $('ajuda').innerHTML=D.ajuda.map(function(a){
   return '<details><summary><span aria-hidden="true">'+a.emoji+'</span>'+esc(a.titulo)+'</summary>'+(a.intro?'<p>'+fmt(a.intro)+'</p>':'')+
     '<'+a.tag+'>'+a.itens.map(function(t){return '<li>'+fmt(t)+'</li>'}).join('')+'</'+a.tag+'></details>';
 }).join('');
-var s=mem.get('estado');
-if(s&&D.caminhos[s.cam]){cam=s.cam;i=Math.min(s.i,D.caminhos[cam].passos.length-1);
-  document.querySelectorAll('.escolha').forEach(function(b){if(b.dataset.caminho===cam&&!b.dataset.ini)b.setAttribute('aria-pressed','true')});
-  if(s.fim)$('pronto').hidden=false;else{$('livro').hidden=false;desenhar()}}
+try{mem.set('estado',null)}catch(e){}
 })();
 
 </script>
